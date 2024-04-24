@@ -1,0 +1,6 @@
+server:
+  port: 8181
+
+active-mq:
+  broker-url: tcp://localhost:61616
+  topic: employee.topic

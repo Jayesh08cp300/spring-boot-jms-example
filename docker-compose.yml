@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  activemq:
+    image: webcenter/activemq:latest
+    container_name: activemq
+    ports:
+      - "61616:61616"  # OpenWire port
+      - "8161:8161"    # Web Console port
+      - "61613:61613"  # Stomp port
+    volumes:
+      - ./data:/data  # Mount volume for data persistence
+    environment:
+      ACTIVEMQ_CONFIG_NAME: default
+      ACTIVEMQ_CONFIG_DEFAULTACCOUNT: true
+      ACTIVEMQ_ADMIN_LOGIN: admin
+      ACTIVEMQ_ADMIN_PASSWORD: admin
